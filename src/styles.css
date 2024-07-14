@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+.nav-link,.dark-mode .nav-link{
+    transition: color 1s;
+}
+.nav-link:hover ,.dark-mode .nav-link:hover{
+    color: brown !important;
+}
+.bg-from{
+    transition:transform 1s ;
+}
+.bg-from:hover{
+    transform: scale(1.1);
+}
+.dark-mode{
+    background-color: #fff !important;
+   
+}
+.dark-mode .text-white ,.dark-mode .text-light,.dark-mode .nav-link{
+    color: #000 !important;
+    
+}
+.dark-mode .navbar-toggler{
+    color: #fff!important; 
+    background-color: #000 !important;
+}

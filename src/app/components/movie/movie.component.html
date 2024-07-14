@@ -1,0 +1,51 @@
+<section>
+<div class="py-5 ">
+        <div class="container">
+            <h3 class="text-white text-center py-2 fs-3 fst-italic">Movie </h3>
+            <ul  class="  mt-2 mt-lg-0 text-white list-unstyled d-flex">
+                <li class="nav-item active" >
+                    <a class="nav-link  text-icon  text-white rounded-pill mx-2 text-center"(click)="getMovies('movie')" >Movie </a>
+                </li>
+                <li class="nav-item " >
+                    <a class="nav-link  text-icon rounded-pill text-white mx-2 text-center"  (click)="getTv('tv')">tv </a>
+                </li>
+                <li class="nav-item " >
+                    <a class="nav-link  text-icon rounded-pill  text-white mx-2 text-center"  (click)="getTv('person')">people </a>
+                </li>
+               
+            </ul>
+            <div class="row gy-3" id="movie">
+                <div class="col-md-3  bg-from"*ngFor="let movie of movies ">
+                    <div class="p-3">
+    
+                        <div [routerLink]="['/Detailsmovie',movie.media_type,movie.id]" class="position-relative">
+                            <img  [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" class="w-100 ">
+                            <h6 class="text-white py-1" >{{movie.title}}</h6>
+                            <p class="text-white py-1" > {{movie.release_date}}</p>
+                            <div class="text-bg-danger position-absolute top-0 left-0 py-1">{{movie.vote_count}}</div>
+                        </div>
+                    </div>
+              
+                </div>
+            </div>
+            <div class="row gy-3 d-none" id="tv">
+                <div class="col-md-3  bg-from"*ngFor="let movie of movies.slice(2,100)">
+                    <div class="p-3">
+                    <div [routerLink]="['/Detailsmovie',movie.media_type,movie.id]"class=" position-relative">
+                        <img *ngIf="movie.media_type==='tv'||movie.media_type==='movie'" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" class="w-100">
+                    <img *ngIf="movie.media_type==='person'" [src]="'https://image.tmdb.org/t/p/w500'+movie.profile_path" class="w-100">
+                        <h6 class="text-white py-1" *ngIf="movie.media_type==='movie'">{{movie.title}}</h6>
+                        <h6 class="text-white py-1"*ngIf="movie.media_type==='tv'||movie.media_type==='person'">{{movie.name}}</h6>
+                        <p class="text-white py-1" *ngIf="movie.media_type==='movie'"> {{movie.release_date}}</p>
+                        <p class="text-white py-1"*ngIf="movie.media_type==='tv'"> {{movie.first_air_date}}</p>
+                        <div class="text-bg-danger position-absolute top-0 left-0 " *ngIf="movie.media_type==='tv'||movie.media_type==='movie'" >{{movie.vote_count}}</div>
+                    </div>
+                    </div>
+                  
+                </div>
+            </div>
+          \
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,32 @@
+<section>
+
+  <div class="py-5  ">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-md-3">
+            <img *ngIf="type === 'tv' || type === 'movie'" [src]="'https://image.tmdb.org/t/p/w500' + movie?.poster_path" class="w-100">
+            <img *ngIf="type === 'person'" [src]="'https://image.tmdb.org/t/p/w500' + movie?.profile_path" class="w-100">
+          </div>
+          <div class="col-md-9">
+            <div class="px-5">
+              <h3 *ngIf="type === 'person' || type === 'tv'" class="text-white text-center">
+                {{ movie?.name }}
+              </h3>
+              <h3 *ngIf="type === 'movie'" class="text-white text-center">
+                {{ movie?.title }}
+              </h3>
+              <p class="text-white" *ngIf="type === 'tv' || type === 'movie'">{{ movie?.overview }}</p>
+              <p *ngIf="type === 'person'" class="text-white">{{ movie?.biography.split(" ",400) }}</p>
+              <div *ngIf="type === 'person'" class="d-flex justify-content-around text-white">
+                <p><span class="fs-5 text-danger">Birthday:</span> {{ movie?.birthday }}</p>
+                <p *ngIf="movie?.deathday!==null"><span class="fs-5 text-danger">Deathday:</span> {{ movie?.deathday }}</p>
+              </div>
+              <p *ngIf="type === 'movie'" class="text-white text-center"><span class="fs-5 text-danger">release_date:</span>{{ movie?.release_date }}</p>
+              <p *ngIf="type === 'tv'" class="text-white text-center"><span class="fs-5 text-danger">last_air_date:</span>{{ movie?.last_air_date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+  

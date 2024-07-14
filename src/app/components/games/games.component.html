@@ -1,0 +1,51 @@
+<section>
+ <div class="py-5  ">
+        <div class="container">
+            <h3 class="text-white text-center py-2 fs-3 fst-italic">Games</h3>
+            <div class="row gy-3">
+                <div class="col-md-2">
+                    <a class="nav-link  " (click)="getgame('MMORPG')" aria-current="page">MMORPG</a>
+                </div>
+                <div class="col-md-2 ">
+                    <a class="nav-link " (click)="getgame('SHOOTER')">SHOOTER</a>
+                </div>
+                <div class="col-md-2 ">
+                    <a class="nav-link " (click)="getgame('SAILING')">SAILING</a>
+                </div>
+                <div class="col-md-2 ">
+                    <a class="nav-link " (click)="getgame('PERMADEATH')">PERMADEATH</a>
+                </div>
+                <div class="col-md-2 ">
+                    <a class="nav-link " (click)="getgame('SUPERHERO')">SUPERHERO</a>
+                </div>
+                <div class="col-md-2 ">
+                    <a class="nav-link" (click)="getgame('PIXEL')">
+                        PIXEL</a>
+                </div>
+            </div>
+            <div class="row gy-3 py-3">
+                <div class="col-md-3"*ngFor="let  Game of Games">
+                    <div class="p-3 card h-100 bg-transparent bg-from "[routerLink]="['/Detailsgame',Game.id]" >
+                        <div class=" position-relative ">
+    
+                            <img [src]="Game.thumbnail" class="w-100 card-img">
+                            <span class="badge  text-white py-1 border-info   font-weight-light bg-primary position-absolute top-100 start-50 translate-middle " >Free</span>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title text-white py-1">{{Game.title}}</h6>
+                            <p class="card-text small fst-italic text-light">{{Game.short_description}}</p>
+                            </div>
+                            <div class="card-footer" >
+                                <div class="d-flex justify-content-between text-white py-1" >
+                                <p class="footer-item badge badge-color text-white py-1 " > {{Game.publisher}}</p>
+                                <p class="footer-item badge badge-color text-white py-1  " >  {{Game.platform}}</p>
+                                  </div>
+                                  </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

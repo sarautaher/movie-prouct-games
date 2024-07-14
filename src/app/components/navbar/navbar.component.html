@@ -1,0 +1,37 @@
+<nav id="navbar-example" class='navbar pt-3 pb-1  navbar-expand-lg  navbar-dark  bg-transparent  '  >
+              
+    <div class="container">
+
+    <a class="navbar-brand fw text-white text-home text-center" routerLink="home" > Home 
+       </a>
+       
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown"> 
+   
+        <ul  class="navbar-nav ms-auto mt-2 mt-lg-0 text-white">
+            <li class="nav-item active" >
+                <a class="nav-link   rounded-pill mx-2 text-center"  routerLink="movie">Movie </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link   rounded-pill text-center mx-2" routerLink="game">Game</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link   rounded-pill text-center mx-2" routerLink="product">product</a>
+            </li>
+            <li class="nav-item ">
+                <button id="togglebutton" #toggleButton class="nav-link   rounded-pill  mx-auto fs-6"(click)="bark()"  >
+                    <i class="fa-solid fa-moon text-primary fs-2 d-none"id="moon"></i>
+                    <i class="fa-solid fa-sun text-warning fs-2" id="sun"></i>
+          </button>      
+            </li>
+          
+        </ul>
+</div>
+</div>
+</nav>
+
+
+

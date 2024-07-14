@@ -1,0 +1,44 @@
+<section class="py-5">
+    <div class="container">
+        <h3 class="text-white text-center py-2 fs-3 fst-italic">Products</h3>
+        <owl-carousel-o [options]="customOptions" class="bg-transparent">
+
+            <ng-container *ngFor="let slide of product">
+              <ng-template carouselSlide [id]="slide.id">
+                <img [src]="slide.imageCover" [alt]="slide.alt" [title]="slide.title">
+              </ng-template>
+            </ng-container>
+        
+          </owl-carousel-o>
+   
+    
+
+    <div class="row gy-4 py-3 " >
+ 
+        <div class="col-md-3 position-relative "  *ngFor="let Product of product" id="product">
+       
+            <div class="card p-5  bg-transparent text-white bg-from">
+                <a [routerLink]="['/productDetails',Product._id]" class="nav-link">
+                <div class="card-img">
+                    <img src={{Product.imageCover}} class="w-100">
+                </div>
+                <p class="card-title">
+                    {{Product.category.name}}
+                </p>
+                <div class="d-flex justify-content-between">
+                <h6 class="'card-desc'">{{Product.title.split(" ").splice(0,2).join(" ")|uppercase}}</h6>
+                <p>{{Product.price|currency:'EUR'}}</p>
+            </div>
+            <div class="   position-absolute  top-0 left-0 start-0">
+                <p *ngIf="Product.ratingsAverage>4 " class="bg-main">{{Product.ratingsAverage}} <i class="fa-solid fa-star rating-color text-warning"></i></p>
+               <p *ngIf="Product.ratingsAverage<4 " class="bg-danger">{{Product.ratingsAverage}} <i class="fa-solid fa-star rating-color text-warning"></i></p>
+            </div>
+        </a> 
+      
+    </div> 
+    </div>
+    
+    </div>
+</div>
+</section>
+

@@ -1,0 +1,24 @@
+<section>
+
+    <div class="container"><div class="row gy-2 gx-5 align-items-center">
+        <div class="col-md-3">
+            <img [src]="ProductS?.imageCover" class="w-100">
+           
+        </div>
+        <div class="col-md-8  text-white">
+            <div>
+                <h1> {{ProductS?.title}}</h1>
+                <p>{{ProductS?.description}}</p>
+            </div>
+            <p>{{ProductS?.category.name}}</p>
+            <div class="d-flex  justify-content-between" >
+             
+                <p><span>Price:</span>  {{ProductS?.price}}</p>
+                <p><span> {{ProductS?.ratingsAverage}}</span> <i  class='fa-solid fa-star text-warning'></i></p>
+              </div>
+              
+          
+        </div>
+        </div>
+        </div>
+</section>
